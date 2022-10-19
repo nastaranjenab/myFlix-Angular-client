@@ -8,7 +8,6 @@ import { map } from 'rxjs/operators';
 const apiUrl = 'https://movieflexworld.herokuapp.com/';
 
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -39,7 +38,7 @@ private handleError(error: HttpErrorResponse): any {
 }
 
   // Making the api call for the user log in endpoint
-  public login(userDetails: any): Observable<any> {
+  public userLogin(userDetails: any): Observable<any> {
     return this.http
       .post(`${apiUrl}login`, userDetails)
       .pipe(catchError(this.handleError));
